@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin section</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="mqadmin.css">
+</head>
+<body>
+    <header>
+        <a href="#"><img src="img/logo.png" alt="politico logo" class="logo"></a>
+        <nav>
+            <div class="row">
+                <a href="#" onclick="toggleNav()" class="menu-icon"></a>
+                <ul class="main-nav">
+                    <li><a href="home.html">home</a></li>
+                    <li><a href="profile.html">admin area</a></li>
+                    <li><a href="index.html">logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="politico-text-box"></div>
+    </header>
+
+    
+    <section>
+        <div class="row">
+            <div class="profile-wrapper">
+                <div class="row">
+                    <div>
+                        <h2 class="create-party-text">create party</h2>
+                    </div>
+                    <div class="create-party">
+                        <form action="#">
+                            <div class="party-group">
+                                <label for="">Party Name</label>
+                                <input type="text">
+                            </div>
+                            <div class="party-group">
+                                <label for="">Headquaters Address</label>
+                                <input type="text">
+                            </div>
+                            <div class="party-group">
+                                <label for="">Party Logo</label>
+                                <input type="file">
+                            </div>
+                            <div class="party-group">
+                                <input type="submit" value="register party">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <!-- My Parties section -->
+                <div class="row parties">
+                    <h2 class="my-parties">list of parties</h2>
+                </div>
+                <div class="row">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PARTY NAME</th>
+                                <th>HQ ADDRESS</th>
+                                <th>PARTY LOGO</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>president</td>
+                                <td>Buhari</td>
+                                <td>PDP</td>
+                                <td>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>president</td>
+                                <td>Buhari</td>
+                                <td>PDP</td>
+                                <td>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>president</td>
+                                <td>Buhari</td>
+                                <td>PDP</td>
+                                <td>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>president</td>
+                                <td>Buhari</td>
+                                <td>PDP</td>
+                                <td>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>president</td>
+                                <td>Buhari</td>
+                                <td>PDP</td>
+                                <td>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>president</td>
+                                <td>Buhari</td>
+                                <td>PDP</td>
+                                <td>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>president</td>
+                                <td>Buhari</td>
+                                <td>PDP</td>
+                                <td>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>president</td>
+                                <td>Buhari</td>
+                                <td>PDP</td>
+                                <td>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+            </div>
+            <div class="line"></div>
+            <div class="row office">
+                <div>
+                    <h2 class="create-office-text">create office</h2>
+                </div>
+                <div class="create-office">
+                    <form action="#">
+                        <div class="office-group">
+                            <label for="">Office Name</label>
+                            <input type="text">
+                        </div>
+                        <div class="office-group">
+                            <label for="">Type</label>
+                            <select name="" id="">
+                                <option value="">Federal</option>
+                                <option value="">Legislative</option>
+                                <option value="">State</option>
+                                <option value="">Local Government</option>
+                            </select>
+                        </div>
+                        <div class="office-group">
+                            <input type="submit" value="register office">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- My Offices section -->
+            <div class="row parties">
+                <h2 class="my-parties">list of Offices</h2>
+            </div>
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>OFFICE NAME</th>
+                            <th>OFFICE TYPE</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>president</td>
+                            <td>PDP</td>
+                            <td>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>president</td>
+                            <td>PDP</td>
+                            <td>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>president</td>
+                            <td>PDP</td>
+                            <td>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>president</td>
+                            <td>PDP</td>
+                            <td>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>president</td>
+                            <td>PDP</td>
+                            <td>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>president</td>
+                            <td>PDP</td>
+                            <td>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>president</td>
+                            <td>PDP</td>
+                            <td>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>president</td>
+                            <td>PDP</td>
+                            <td>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+        </div>
+        <div class="line"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row footer-section">
+            <div>
+                <ul class="footer-nav">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="social-links">
+                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p class="footer-p"> Copyright &copy; 2019 by Politico. All Rights Reserved</p>
+        </div>
+    </footer>
+            <script src="mqadmin.js"></script>
+        </body>
+        </html>
