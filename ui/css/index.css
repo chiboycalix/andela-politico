@@ -1,0 +1,453 @@
+/*---------------------------*/
+/*        BASIC SETUP        */
+/*--------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+html{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+
+
+.hide{
+    display: none;
+}
+/*---------------------------*/
+/*   REUSABLE COMPONENTS     */
+/*--------------------------*/
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+section{
+    padding: 80px 0;
+}
+
+/*    HEADINGS    */
+h1,
+h2,
+h3,
+h4{
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+}
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #12ef6e;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+/*   PLACEHOLDER        */
+::placeholder{
+    padding-left: 5px;
+}
+
+/*     PARAGRAPHS     */
+.long-text{
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+
+/*     BUTTONS     */
+input[type=submit]{
+    cursor: pointer;
+    background-color: #12ef6e;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #12ef6e;
+    text-transform: uppercase;
+    height: 40px;
+    -webkit-transition: background-color .5s, border .5s;
+    -moz-transition: background-color .5s, border .5s;
+    transition: background-color .5s, border .5s;
+}
+input[type=submit]:hover{
+    cursor: pointer;
+    background-color:  #075a26;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid  #075a26;
+    text-transform: uppercase;
+    height: 40px;
+}
+
+/*   INPUT ELEMENTS   */
+input[type=text]{
+    line-height: 1.2em;
+    font-size: 100%;
+    float: right;
+    height: 30px;
+    width: 60%;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+input[type=file]{
+    font-size: 80%;
+    cursor: pointer;
+}
+
+
+/*   LINKS   */
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/*   BOX   */
+.box {
+    padding: 1%;
+    overflow: hidden;
+    background-color: #fff;
+}
+.box h3{
+    text-align: center;
+}
+
+.box img{
+    opacity: 0.8;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    transform: scale(1.10);
+    transition: transform 0.5s, opacity 0.5s;
+}
+.box img:hover{
+    transform: scale(1.0);
+    opacity: 1;
+}
+
+/*---------------------------*/
+/*        HEADER             */
+/*--------------------------*/
+header{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/bg4.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+}
+.politico-text-box{
+    position: absolute;
+    text-align: center;
+    width: 1140px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #12ef6e;
+    float: left;
+    margin: 20px 40px;
+}
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottm 0.5s;
+}
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #12ef6e;
+}
+.signin{
+    text-align: center;
+    width: 70%;
+    margin-top: 20px;
+}
+.signin-div{
+    margin: 0 auto;
+    transform: translate(30%);
+}
+.signin-div input{
+    margin-top: 20px;
+    height: 40px;
+    width: 25%;
+    float: left;
+    margin-left: 20px;
+}
+  
+
+
+/*    MODAL / SIGNUP    s*/
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-header{
+    width: 100%;
+    height: 50px;
+    background-color: #12ef6e;
+    margin: 0;
+    padding: 0;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(26, 24, 24);
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    color: #fff;
+}
+
+.close-button {
+    float: right;
+    width: 1.0rem;
+    margin-bottom: 20px;
+    line-height: 1.0rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    color: #fff;
+    background-color: #12ef6e;
+}
+.close-button:hover {
+    background-color: #075a26;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0.5s, linear 0.5s, opacity 0.5s 0s, transform 0.5s;
+}
+.siginup{
+    margin-top: 25px;
+}
+.siginup input[type=submit]{
+    text-align: center;
+    width: 70%;
+    cursor: pointer;
+}
+.form-group{
+    padding: 20px 10px;
+}
+
+
+/*----------------------------------------*/
+/*    POLITICIAN / MANIFESTO SECTION     */
+/*--------------------------------------*/
+
+.grid-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+
+}
+.grid-wrapper img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 5px;
+}
+.grid-wrapper h4{
+    font-size: 80%;
+    box-sizing: border-box;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+.grid-wrapper span{
+    text-transform: uppercase;
+    font-size: 70%;
+    font-style: italic;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+}
+.grid-wrapper div{
+    margin-top: 30px;
+}
+.grid-wrapper div p{
+   font-size: 80%;
+   line-height: 145%;
+}
+
+/*---------------------------*/
+/*     ASPIRANTS SECTION     */
+/*--------------------------*/
+.aspirants-section{
+    background-color: #f4f4f4;
+}
+.aspirants-grid{
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 70px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 80px;
+}
+.aspirants{
+    background-color: #fff;
+    width: 100%;
+    border-radius: 5px;
+}
+.aspirants div{
+    padding: 15px;
+}
+.aspirants h3{
+    text-align: center;
+}
+.aspirants form {
+    font-size: 90%;
+    padding: 8px;
+}
+.aspirants form input{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.aspirants form input[type=button]{
+    background-color: #12ef6e;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 70%;
+    margin-left: 15%;
+    text-transform: uppercase;
+}
+.aspirants form input[type=button]:hover,
+.aspirants form input[type=button]:active{
+    background-color: #075a26;
+}
+
+
+
+/*---------------------------*/
+/* POLITICAL PARTIES SECTION */
+/*--------------------------*/
+.parties-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.parties-grid img{
+    width: 100%;
+    height: 100%;
+}
+
+/*---------------------------*/
+/*     FOOTER SECTION        */
+/*--------------------------*/
+footer{
+    background-color: #333;
+    padding: 50px;
+}
+.footer-section{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+.footer-nav{
+    list-style: none;
+    float: left;
+}
+.social-links{
+    list-style: none;
+    float: right;
+}
+.footer-nav li,
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    border: 0;
+    color: #888;
+    transition: color 0.5s;
+
+}
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: #ddd;
+    
+}
+.footer-p{
+    color: #888;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 50px;
+}
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 180%;
+}
+.ion-social-facebook:hover{
+    color: #3b5998;
+}
+.ion-social-twitter:hover{
+    color: #00aced;
+}
+.ion-social-googleplus:hover{
+    color: #dd4b39;
+}
+.ion-social-instagram:hover{
+    color: #517fa4;
+}
+
+
+
