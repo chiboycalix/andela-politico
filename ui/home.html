@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Andela Politico</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="mediaquery.css">
+    
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+            <a href="home.html"><img src="img/logo.png" alt="politico logo" class="logo"></a>
+        <nav>
+            <div class="row">
+                
+                <a href="#" onclick="toggleNav()" class="menu-icon"></a>
+                <ul class="main-nav"  id="nav-menu">
+                    <li><a href="#manifesto">Manifestos</a></li>
+                    <li><a href="#vote">vote</a></li>
+                    <li><a href="#political-parties">parties</a></li>
+                    <li><a href="profile.html">my profile</a></li>
+                    <li><a href="index.html">logout</a></li>
+                </ul>
+        </nav>
+        <div class="politico-text-box">
+            <h1>Let your vote count</h1>
+           
+        </div>
+    </header>
+
+<!-- POLITICIAN / MANIFESTO SECTION -->
+<section class="politician-section" id="manifesto">
+        <div class="row">
+            <h2>Manifestos &mdash; Political Aspirants</h2>
+            <p class="long-text">Lorem ipsum dolor sit amet consectetur, 
+                adipisicing elit. Autem, aut reprehenderit neque quia consectetur dolorem.
+           </p>
+        </div>
+        <div class="row grid-wrapper">
+             <div>
+                 <img src="img/aspirants/1.jpg" alt="aspirant 1">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, tempore. Rem voluptates laboriosam perspiciatis, adipisci dolore</p><br>
+                <h4>First person</h4>
+                <span>for president</span>
+             </div>
+             <div>
+                 <img src="img/aspirants/2.jpg" alt="aspirant 2">
+                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, tempore. Rem voluptates laboriosam perspiciatis, adipisci dolore</p><br>
+                 <h4>Second person</h4>
+                 <span>for president</span>
+             </div>
+             <div>
+                 <img src="img/aspirants/3.jpg" alt="aspirant 3">
+                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, tempore. Rem voluptates laboriosam perspiciatis, adipisci dolore</p><br>
+                 <h4>Third person</h4>
+                 <span>for president</span>
+             </div>
+             <div>
+                 <img src="img/aspirants/4.jpg" alt="aspirant 4">
+                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, tempore. Rem voluptates laboriosam perspiciatis, adipisci dolore</p><br>
+                 <h4>Fourth person</h4>
+                 <span>for president</span>
+             </div>
+        </div>
+     </section>
+
+
+<!--VIEW ASPIRANTS -->
+<section class="aspirants-section" id="vote">
+    <div class="row">
+        <h2>Citizens &mdash; Meet your Candidates</h2>
+    </div>
+<div class="row aspirants-grid">
+    <div class="aspirants">
+        <div>
+           <h3>President</h3>
+           <hr>
+        </div>
+        <form>
+            <input type="checkbox" class="i-1" value="president1"> Buhari Mohammadu<br>
+            <input type="checkbox" class="i-2" value="president2"> Atiku<br>
+            <input type="checkbox" class="i-3" value="president3"> Sowore<br>
+            <input type="checkbox" class="i-4" value="president4"> Obi<br>
+            <input type="checkbox" class="i-5" value="president5"> Yemi<br>
+            <br><hr>
+            <input type="button" id="vote-president" value="vote">
+        </form>
+   </div>
+   
+   <div class="aspirants">
+        <div>
+           <h3>Governor</h3>
+           <hr>
+        </div>
+        <form>
+            <input type="checkbox" class="i-6" value="governor1"> Buhari Mohammadu<br>
+            <input type="checkbox" class="i-7" value="governor2"> Atiku<br>
+            <input type="checkbox" class="i-8" value="governor3"> Sowore<br>
+            <input type="checkbox" class="i-9" value="governor4"> Obi<br>
+            <input type="checkbox" class="i-10" value="governor5"> Yemi<br>
+            <br><hr>
+            <input type="button" id="vote-governor" value="vote">
+        </form>
+   </div>
+   <div class="aspirants">
+        <div>
+           <h3>Senator</h3>
+           <hr>
+        </div>
+        <form>
+            <input type="checkbox" class="i-11" value="senator1"> Buhari Mohammadu<br>
+            <input type="checkbox" class="i-12" value="senator2"> Atiku<br>
+            <input type="checkbox" class="i-13" value="senator3"> Sowore<br>
+            <input type="checkbox" class="i-14" value="senator4"> Obi<br>
+            <input type="checkbox" class="i-15" value="senator5"> Yemi<br>
+            <br><hr>
+            <input type="button" id="vote-senator" value="vote">
+        </form>
+   </div>
+   <div class="aspirants">
+        <div>
+           <h3>Senator</h3>
+           <hr>
+        </div>
+        <form>
+            <input type="checkbox" class="i-1" value="Mohammadu1"> Buhari Mohammadu<br>
+            <input type="checkbox" class="i-2" value="Mohammadu2"> Atiku<br>
+            <input type="checkbox" class="i-3" value="Mohammadu3"> Sowore<br>
+            <input type="checkbox" class="i-4" value="Mohammadu4"> Obi<br>
+            <input type="checkbox" class="i-5" value="Mohammadu5"> Yemi<br>
+            <br><hr>
+            <input type="button" id="vote-0" value="vote">
+        </form>
+   </div>
+   <div class="aspirants">
+        <div>
+           <h3>President</h3>
+           <hr>
+        </div>
+        <form>
+            <input type="checkbox" class="i-1" value="Mohammadu1"> Buhari Mohammadu<br>
+            <input type="checkbox" class="i-2" value="Mohammadu2"> Atiku<br>
+            <input type="checkbox" class="i-3" value="Mohammadu3"> Sowore<br>
+            <input type="checkbox" class="i-4" value="Mohammadu4"> Obi<br>
+            <input type="checkbox" class="i-5" value="Mohammadu5"> Yemi<br>
+            <br><hr>
+            <input type="button" id="vote-0" value="vote">
+        </form>
+   </div>
+   <div class="aspirants">
+        <div>
+           <h3>President</h3>
+           <hr>
+        </div>
+        <form>
+            <input type="checkbox" class="i-1" value="Mohammadu1"> Buhari Mohammadu<br>
+            <input type="checkbox" class="i-2" value="Mohammadu2"> Atiku<br>
+            <input type="checkbox" class="i-3" value="Mohammadu3"> Sowore<br>
+            <input type="checkbox" class="i-4" value="Mohammadu4"> Obi<br>
+            <input type="checkbox" class="i-5" value="Mohammadu5"> Yemi<br>
+            <br><hr>
+            <input type="button" id="vote-0" value="vote">
+        </form>
+   </div>
+   <div class="aspirants">
+        <div>
+           <h3>President</h3>
+           <hr>
+        </div>
+        <form>
+            <input type="checkbox" class="i-1" value="Mohammadu1"> Buhari Mohammadu<br>
+            <input type="checkbox" class="i-2" value="Mohammadu2"> Atiku<br>
+            <input type="checkbox" class="i-3" value="Mohammadu3"> Sowore<br>
+            <input type="checkbox" class="i-4" value="Mohammadu4"> Obi<br>
+            <input type="checkbox" class="i-5" value="Mohammadu5"> Yemi<br>
+            <br><hr>
+            <input type="button" id="vote-0" value="vote">
+        </form>
+   </div>
+   <div class="aspirants">
+        <div>
+           <h3>President</h3>
+           <hr>
+        </div>
+        <form>
+            <input type="checkbox" class="i-1" value="Mohammadu1"> Buhari Mohammadu<br>
+            <input type="checkbox" class="i-2" value="Mohammadu2"> Atiku<br>
+            <input type="checkbox" class="i-3" value="Mohammadu3"> Sowore<br>
+            <input type="checkbox" class="i-4" value="Mohammadu4"> Obi<br>
+            <input type="checkbox" class="i-5" value="Mohammadu5"> Yemi<br>
+            <br><hr>
+            <input type="button" id="vote-0" value="vote">
+        </form>
+   </div>
+</div>
+</section>
+
+<!-- SECTION FOR CANDIDATES -->
+<section class="register-candidate">
+    <div class="row">
+        <h2>register and be voted for</h2>
+    </div>
+    <div class="row">
+        <div class="create-candidate">
+            <form action="#">
+                <div class="candidate-group">
+                    <label for="">office</label>
+                    <select name="" id="">
+                        <option value="">------</option>
+                        <option value="">Alhaji Tafawa Balewa -- PDP</option>
+                        <option value="">Aguyi Ironsi -- PDP</option>
+                        <option value="">Yakubu Gowon -- PDP</option>
+                        <option value="">Alhaji Shehu Shagari -- PDP</option>
+                        <option value="">Dr. Nnamdi Azikiwe -- PDP</option>
+                   </select> 
+                </div>
+                <div class="candidate-group">
+                    <label for="">party</label>
+                    <select name="" id="">
+                        <option value="">-------</option>
+                        <option value="">Alhaji Tafawa Balewa -- PDP</option>
+                        <option value="">Aguyi Ironsi -- PDP</option>
+                        <option value="">Yakubu Gowon -- PDP</option>
+                        <option value="">Alhaji Shehu Shagari -- PDP</option>
+                        <option value="">Dr. Nnamdi Azikiwe -- PDP</option>
+                   </select> 
+                </div>
+                <div class="candidate-group">
+                    <label for="">full name</label>
+                    <input type="text">
+                </div>
+                <div class="candidate-group">
+                    <label for="">Manifesto</label>
+                    <textarea name=""></textarea>
+                </div>
+                <div class="candidate-group btn-register">
+                    <input type="submit" value="register">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- SECTION FOR POLITICAL PARTIES -->
+<section class="political-party" id="political-parties">
+    <div class="row">
+        <h2>Political Parties</h2>
+    </div>
+    <div class="row parties-grid">
+        <div class="box">
+             <a href="#"><img src="img/parties/p1.jpg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p2.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p3.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p4.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p5.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p6.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p7.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p8.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p9.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p10.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p11.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p12.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p13.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p14.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p15.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p16.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p17.jpeg" alt=""></a>
+        </div>
+        <div class="box">
+             <a href="#"><img src="img/parties/p18.jpeg" alt=""></a>
+        </div>
+    </div>
+</section>
+
+<!--BEGGINING OF FOOTER-->
+<footer>
+    <div class="row footer-section">
+        <div>
+            <ul class="footer-nav">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Press</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="social-links">
+                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <p class="footer-p"> Copyright &copy; 2019 by Politico. All Rights Reserved</p>
+    </div>
+</footer>
+
+    <script src="mediaquery.js"></script>
+    <script src="vote.js"></script>
+</body>
+</html>
