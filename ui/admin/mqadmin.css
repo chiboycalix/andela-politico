@@ -1,0 +1,157 @@
+/*-----------------------------*/
+/*MEDIA QUERIES */
+/*----------------------------*/
+
+/* MEDIA QUERIES FOR LARGE SCREENS 1200PX AND ABOVE*/
+@media only screen and (max-width: 1200px){
+    .row{
+        padding: 0 4%;
+    }
+}
+
+
+/* MEDIA QUERIES FOR SMALLL TABLETS 480PX - 768PX*/
+@media only screen and (max-width: 830px){
+    .main-nav{
+        float: none;
+        clear: left;
+        width: 100%;
+        margin: 10px;
+    }
+    .main-nav ul{
+        margin: 10px;
+        padding: 0;
+        font-size: 90%;
+        
+    }
+    .main-nav li a:link,
+    .main-nav li a:visited {
+        font-size: 70%;
+    }
+    .logo{
+        width: 100px;
+        margin-left: 44%;
+        float: none;
+        text-align: center;
+    }
+    
+     h1{
+        font-size: 200%;
+        margin-top: 50px;
+    }
+ 
+    footer{
+        font-size: 90%;
+    }
+    
+}
+
+
+/* MEDIA QUERIES FOR SMALLL PHONES 0 - 480PX*/
+@media only screen and (max-width: 615px){
+    .main-nav{
+        float: none;
+        clear: left;
+        width: 70%;
+        margin-left: 15%;
+        padding-top: 10px;
+        text-align: justify;
+    }
+    .main-nav li a:link,
+    .main-nav li a:visited {
+        font-size: 70%;
+    }
+    nav ul li{
+        margin-top: 5px;
+    }
+    
+    footer{
+        font-size: 70%;
+    }
+ 
+}
+@media only screen and (max-width: 490px){
+    .logo{
+        width: 100px;
+        margin-left: 20px;
+    }
+    nav{
+       height: 100%;
+    }
+    .menu-icon{
+        display: block;
+        height: 30px;
+        float: right;
+        width: 30px;
+        background: url('../img/icon.png') no-repeat 98% center;
+        background-color:#fff; 
+        position: relative;
+        top: -70px;
+        cursor: pointer;
+    }
+    .main-nav{
+        float: left;
+        overflow: hidden;
+        width: 100%;
+        background-color: transparent;
+        margin-left: 0%;
+        height: 0px;
+        transition: margin-left 1s;
+    }
+    .main-nav.open{
+        height: 76vh;
+        width: 100vw;
+        margin-top: -5.5%;
+        background-color: #404040;
+        margin-left: -5%;
+    }
+    .main-nav li{
+        width: 80%;
+        text-align: center;
+        border-bottom: 1px solid rgb(119, 108, 108);
+    }
+
+    .main-nav li a:link,
+    .main-nav li a:visited {
+        padding: 15px;
+        color: #fff;
+        display: block;
+        margin: 0;
+    }
+
+    h2{
+        font-size: 130%;
+    }
+   
+
+    .footer-nav li,
+    .social-links li{
+        display: block;
+        padding: 5px;
+    }
+    .footer-p{
+        margin-top: 20px;
+    }
+    table{
+        font-size: 70%;
+     }
+
+     .profile-wrapper{
+        font-size: 70%;
+     }
+     .create-party form{
+        transform: translateX(10%);
+     }
+     .create-party input[type=text],
+     .create-party input[type=file]{
+         margin: 10px;
+         padding: 5px;
+     }
+     .create-party input[type=submit]{
+         font-size: 90%;
+     }
+     .party-group{
+         width: 80%;
+         margin-left: 10%;
+     }
+}
