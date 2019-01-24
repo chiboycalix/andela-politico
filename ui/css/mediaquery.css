@@ -118,9 +118,9 @@
     .header-grid h3{
         font-size: 90%;
     }
-    table{
-       font-size: 90%;
-    }
+    table.my-profile{
+        font-size: 90%;
+     }
 }
 
 /* MEDIA QUERIES FOR MEDIUM PHONES 0 - 480PX*/
@@ -248,7 +248,21 @@
     .nameEmail{
         margin: 0 auto;
     }
-    table{
+    table.my-profile{
         font-size: 60%;
      }
+
+     /* Media queries for election results*/
+     table.election-results{
+         font-size: 53%;
+     }
+     table.election-results th,td{
+        padding: 5px;
+        text-align: left;
+    }
+    th{
+        background-color: #555;
+        padding: 15px 0px;
+        color: #fff;
+    }
 }
