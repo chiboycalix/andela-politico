@@ -321,6 +321,32 @@ header{
    line-height: 145%;
 }
 
+/*-----------------------------------*/
+/*     ELECTION RESULTS SECTION     */
+/*---------------------------------*/
+.results-section{
+    background-color: #f4f4f4;
+}
+table.election-results{
+    border-collapse: collapse;
+    width: 100%;
+}
+table.election-results th,td{
+    padding: 8px;
+    text-align: center;
+}
+th{
+    background-color: #555;
+    padding: 15px 15px;
+    color: #fff;
+}
+tr:nth-child(even){
+    background-color: #fff;
+}
+table td.winner{
+    color: #12ef6e
+}
+
 /*---------------------------*/
 /*     ASPIRANTS SECTION     */
 /*--------------------------*/
