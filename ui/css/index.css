@@ -104,7 +104,8 @@ input[type=submit]:hover{
 }
 
 /*   INPUT ELEMENTS   */
-input[type=text]{
+input[type=text],
+input[type=password]{
     line-height: 1.2em;
     font-size: 100%;
     float: right;
@@ -154,7 +155,7 @@ a{
 /*        HEADER             */
 /*--------------------------*/
 header{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/bg4.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/bg2.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
