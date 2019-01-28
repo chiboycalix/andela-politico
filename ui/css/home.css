@@ -397,16 +397,16 @@ footer{
 .social-links li a:visited{
     font-size: 180%;
 }
-.ion-social-facebook:hover{
+.fa-facebook:hover{
     color: #3b5998;
 }
-.ion-social-twitter:hover{
+.fa-twitter:hover{
     color: #00aced;
 }
-.ion-social-googleplus:hover{
+.fa-google-plus-official:hover{
     color: #dd4b39;
 }
-.ion-social-instagram:hover{
+.fa-instagram:hover{
     color: #517fa4;
 }
 

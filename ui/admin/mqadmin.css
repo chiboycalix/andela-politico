@@ -137,15 +137,17 @@
        height: 100%;
     }
     .menu-icon{
-        display: block;
-        height: 30px;
         float: right;
-        width: 30px;
-        background: url('./img/menu.jpeg') no-repeat 98% center;
         position: relative;
-        top: -70px;
+        top: -100px;
         cursor: pointer;
     }
+    div.ic {
+        width: 35px;
+        height: 5px;
+        background-color: #fff;
+        margin: 6px 10px;
+      }
    
     .main-nav{
         float: left;
