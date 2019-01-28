@@ -7,6 +7,9 @@
     .row{
         padding: 0 4%;
     }
+    .logo{
+        margin-left: 20px;
+    }
 }
 
 
@@ -17,16 +20,23 @@
         clear: left;
         width: 100%;
         margin: 10px;
+        transform: translateX(-30%)
     }
     .main-nav ul{
         margin: 10px;
         padding: 0;
         font-size: 90%;
+       
+    }
+    .main-nav li {
+       float: right;
+       /* width: 100%; */
         
     }
     .main-nav li a:link,
     .main-nav li a:visited {
         font-size: 70%;
+        
     }
     .logo{
         width: 100px;
@@ -44,6 +54,52 @@
         font-size: 90%;
     }
     
+    
+
+    table{
+        font-size: 120%;
+     }
+     th{
+         padding:10px 5px;
+     }
+     th,td{
+        padding: 10px;
+        text-align: center;
+    }
+    .edit,
+    .delete{
+        padding: 2px;
+        margin: 2px;
+        display: block;
+    }
+
+    /* .create-party form{
+        transform: translateX(10%);
+     } */
+     .create-party input[type=text],
+     .create-party input[type=file]{
+         margin: 10px 0px;
+         padding: 5px;
+         font-size: 120%;
+         text-align: center;
+     }
+     .create-party input[type=submit]{
+         font-size: 90%;
+     }
+
+     .create-office input[type=text]{
+        float: none;
+        margin-top:7px;
+        width: 100%;
+        height: 40px;
+    }
+    .create-office select{
+        padding: 10px;
+        float: none;
+        width: 100%;
+        margin-top:7px;
+        margin-left: -5px;
+    }
 }
 
 
@@ -63,11 +119,13 @@
     }
     nav ul li{
         margin-top: 5px;
+        
     }
     
     footer{
         font-size: 70%;
     }
+
  
 }
 @media only screen and (max-width: 490px){
@@ -83,18 +141,18 @@
         height: 30px;
         float: right;
         width: 30px;
-        background: url('../img/icon.png') no-repeat 98% center;
-        background-color:#fff; 
+        background: url('./img/menu.jpeg') no-repeat 98% center;
         position: relative;
         top: -70px;
         cursor: pointer;
     }
+   
     .main-nav{
         float: left;
         overflow: hidden;
         width: 100%;
         background-color: transparent;
-        margin-left: 0%;
+        margin-left: 30%;
         height: 0px;
         transition: margin-left 1s;
     }
@@ -103,10 +161,12 @@
         width: 100vw;
         margin-top: -5.5%;
         background-color: #404040;
-        margin-left: -5%;
+        margin-left: 28%;
     }
+    
     .main-nav li{
         width: 80%;
+        transform: translateX(-10%);
         text-align: center;
         border-bottom: 1px solid rgb(119, 108, 108);
     }
@@ -132,20 +192,63 @@
     .footer-p{
         margin-top: 20px;
     }
-    table{
-        font-size: 70%;
-     }
 
+    /* Table section*/
+    /* add to github */
+    table{
+        font-size: 100%;
+     }
+     th{
+         padding:10px 5px;
+     }
+     th,td{
+        padding: 10px;
+        text-align: center;
+    }
+    .edit,
+    .delete{
+        padding: 2px;
+        margin: 2px;
+        display: block;
+    }
+    /* add to github */
+
+
+    .create-office input[type=text]{
+        float: none;
+        margin-top:7px;
+        margin-left: -20px;
+        height: 30px;
+        width: 128%;
+    }
+    .create-office select{
+        padding: 10px;
+        float: none;
+        width: 128%;
+        margin-top:7px;
+        margin-left: -20px;
+    }
+    
+    /* .create-party form{
+        margin-left: -10px;
+    }  */
+
+    
+   
      .profile-wrapper{
         font-size: 70%;
      }
      .create-party form{
         transform: translateX(10%);
      }
+     
      .create-party input[type=text],
      .create-party input[type=file]{
          margin: 10px;
          padding: 5px;
+     }
+     .create-party input[type=file]{
+         transform: translateX(30%)
      }
      .create-party input[type=submit]{
          font-size: 90%;

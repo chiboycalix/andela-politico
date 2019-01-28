@@ -12,6 +12,7 @@ html{
 .hide{
     display: none;
 }
+
 /*---------------------------*/
 /*       REUSEABLE COMPONENTS           */
 /*--------------------------*/
@@ -56,48 +57,9 @@ h2:after{
     margin: 0 auto;
     margin-top: 30px;
 }
-h3{
-    font-size: 130%;
-    margin-bottom: 15px;
-}
-/*     BUTTONS     */
-input[type=submit]{
-    cursor: pointer;
-    background-color: #12ef6e;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #12ef6e;
-    text-transform: uppercase;
-    height: 40px;
-    -webkit-transition: background-color .5s, border .5s;
-    -moz-transition: background-color .5s, border .5s;
-    transition: background-color .5s, border .5s;
-}
-input[type=submit]:hover{
-    cursor: pointer;
-    background-color:  #075a26;
-    color: #fff;
-    border-radius: 5px;
-    border: 1px solid  #075a26;
-    text-transform: uppercase;
-    height: 40px;
-}
-
-/*   INPUT ELEMENTS   */
-input{
-    line-height: 1.2em;
-    font-size: 100%;
-}
-input[type=file]{
-    font-size: 80%;
-    cursor: pointer;
-}
-label{
-    font-size: 80%;
-    text-transform: uppercase;
-}
-
+/* h3{
+    
+} */
 
 .line{
     margin-top: 20px;
@@ -149,41 +111,32 @@ header{
     border-bottom: 2px solid #12ef6e;
 }
 
-/*----------------------------*/
-/*   CREATE PARTY SECTION    */
+/*---------------------------*/
+/*        PROFILE DIV        */
 /*--------------------------*/
-.create-party-text{
-    text-align: center;
-    padding-top: 50px;
+.header-grid{
+    display: grid;
+    width: 100%;
+    padding-top: 40px;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 0;
 }
-.create-party{
-    padding: 30px;
-    width: 90%;
-    margin-left: 5%;
-    background-color: #f4f4f4;
+.header-grid p{
+    color: #ccc;
+    font-style: italic;
+    margin-left: 30px;
 }
-.party-group{
-    width: 70%;
-    margin-left: 15%;
-    padding: 10px;
+.header-grid .party-photo{
+    width: 150px;
+    height: 150px;
+    margin-left: 100px;
+    /* border: 3px solid #12ef6e; */
+    /* border-radius: 50px; */
 }
-.create-party input[type=text]{
-    float: right;
-}
-input[type=file]{
-    float: right;
-    transform: translate(18%);
-}
-
-/*---------------------------------*/
-/*   EDIT/DELETE PARTY SECTION    */
-/*-------------------------------*/
-
-.parties{
-    margin-top: 30px;
-}
-.my-parties{
-    text-align: center;
+.header-grid h3{
+    font-size: 130%;
+    margin-bottom: 15px;
+    margin-left: 30px;
 }
 
 /*---------------------------*/
@@ -211,50 +164,7 @@ th{
 tr:nth-child(even){
     background-color: #f2f2f2;
 }
-a{
-    text-decoration: none;
-    padding: 5px;
-    color: #fff;
-    font-size: 90%;
-}
-.edit{
-    background-color: blue;
-    border-radius: 5px;
-}
-.delete{
-    background-color: red;
-    border-radius: 5px;
-}
 
-/*----------------------------*/
-/*   CREATE OFFICE SECTION    */
-/*--------------------------*/
-.office{
-    margin-bottom: 50px;
-}
-.create-office-text{
-    text-align: center;
-    padding-top: 50px;
-}
-.create-office{
-    padding: 30px;
-    width: 90%;
-    margin-left: 5%;
-    background-color: #f4f4f4;
-}
-.office-group{
-    width: 70%;
-    margin-left: 15%;
-    padding: 10px;
-}
-input[type=text]{
-    float: right;
-}
-select{
-    padding: 5px;
-    float: right;
-    width: 37.5%;
-}
 
 
 /*---------------------------*/

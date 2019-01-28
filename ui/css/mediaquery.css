@@ -156,16 +156,19 @@
         overflow: hidden;
         width: 100%;
         background-color: transparent;
-        margin-left: 10%;
+        margin-left: 5%;
+        opacity: .5;
         height: 0px;
-        transition: margin-left 1s;
+        transition: margin-left 2s, opacity 2s;
     }
     .main-nav.open{
-        height: 75vh;
+        height: 80vh;
         width: 100vw;
         margin-top: -4.2%;
         background-color: #404040;
         margin-left: -5%;
+        display: inline-block;
+        opacity: 1;
     }
     .main-nav li{
         width: 80%;
@@ -252,6 +255,13 @@
         font-size: 60%;
      }
 
+    /* Media queries for party details page*/
+     .header-grid .party-photo{
+        width: 70px;
+        height: 70px;
+        margin-left: 20%;
+        /* border: 1px solid #12ef6e; */
+    }
      /* Media queries for election results*/
      table.election-results{
          font-size: 53%;
