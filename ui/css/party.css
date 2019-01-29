@@ -127,12 +127,12 @@ header{
     font-style: italic;
     margin-left: 30px;
 }
-.header-grid .photo{
+.header-grid .party-photo{
     width: 150px;
     height: 150px;
     margin-left: 100px;
-    border: 3px solid #12ef6e;
-    border-radius: 50px;
+    /* border: 3px solid #12ef6e; */
+    /* border-radius: 50px; */
 }
 .header-grid h3{
     font-size: 130%;

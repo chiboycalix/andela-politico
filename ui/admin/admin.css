@@ -110,7 +110,7 @@ label{
 /*        HEADER             */
 /*--------------------------*/
 header{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/bg4.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/bg2.jpg');
     background-size: cover;
     background-position: center;
     height: 22vh;
@@ -124,6 +124,7 @@ header{
     border: 3px solid #12ef6e;
     float: left;
     margin-top: 20px;
+    margin-left: 20px;
 }
 .main-nav{
     float: right;
@@ -167,7 +168,7 @@ header{
     margin-left: 15%;
     padding: 10px;
 }
-input[type=text]{
+.create-party input[type=text]{
     float: right;
 }
 input[type=file]{
@@ -310,16 +311,16 @@ footer{
 .social-links li a:visited{
     font-size: 180%;
 }
-.ion-social-facebook:hover{
+.fa-facebook:hover{
     color: #3b5998;
 }
-.ion-social-twitter:hover{
+.fa-twitter:hover{
     color: #00aced;
 }
-.ion-social-googleplus:hover{
+.fa-google-plus-official:hover{
     color: #dd4b39;
 }
-.ion-social-instagram:hover{
+.fa-instagram:hover{
     color: #517fa4;
 }
 
