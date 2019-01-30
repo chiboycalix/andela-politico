@@ -17,6 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var router = _express2.default.Router();
 
 router.post('/', _PartyController2.default.creatParty);
+router.get('/', _PartyController2.default.getParties);
 
 exports.default = router;
 //# sourceMappingURL=partyRoutes.js.map

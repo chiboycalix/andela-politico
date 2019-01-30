@@ -48,6 +48,18 @@ describe('/POST Party Endpoint', function () {
     _chai2.default.request(_app2.default).post('/api/v1/parties').send(wrongDetails).end(function (request, response) {
       response.statusCode.should.equal(400);
       response.body.statusMessage.should.equal('All fields are required');
+      response.body.data.should.be.a('array');
+      response.body.data.length.should.be.equal(0);
+      done();
+    });
+  });
+});
+
+describe('/GET parties', function () {
+  it('it should be able GET all parties', function (done) {
+    _chai2.default.request(_app2.default).get('/api/v1/parties').end(function (request, response) {
+      response.should.have.status(200);
+      response.body.should.be.a('object');
       done();
     });
   });

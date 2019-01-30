@@ -4,7 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* eslint-disable class-methods-use-this */
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* eslint-disable consistent-return */
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-extra-semi */
 /* eslint-disable no-undef */
 
@@ -42,6 +43,14 @@ var PartyController = function () {
         logoUrl: logoUrl
       });
       return (0, _response2.default)(res, 201, 'Party created successfully', _partyDB2.default[_partyDB2.default.length - 1]);
+    }
+  }, {
+    key: 'getParties',
+
+
+    // Get all parties Controller function
+    value: function getParties(req, res) {
+      return (0, _response2.default)(res, 200, 'Success', _partyDB2.default);
     }
   }]);
 
