@@ -24,6 +24,17 @@ class PartyController {
   getParties(req, res) { 
     return httpResponse(res, 200, 'Success', parties);
   }
+
+  // Get party Controller function
+  getParty(req, res) {
+    const { partyId } = req.params;
+    for (let i = 0; i < parties.length; i += 1) {
+      if (parties[i].id === parseInt(partyId, 10)) {
+        return httpResponse(res, 200, 'success', parties[i]);
+      }
+    }
+    return httpResponse(res, 404, 'Party does not exist');
+  }
 }
 
 

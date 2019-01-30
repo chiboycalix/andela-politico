@@ -61,3 +61,34 @@ describe('/GET parties', () => {
       });
   });
 });
+
+describe('/GET/:partyId party', () => {
+  const validParty = {
+    id: 1,
+    name: 'party name',
+    logoUrl: 'chi.jpg',
+  };
+  const invalidParty = {
+    name: 'party name',
+    logoUrl: 'chi.jpg',
+  };
+
+  it('it should be able GET a party', (done) => {
+    chai.request(server)
+      .get(`/api/v1/parties/${validParty.id}`)
+      .end((request, response) => {
+        response.should.have.status(200);
+        done();
+      });
+  });
+
+  it('should only return a valid party', (done) => {
+    chai.request(server)
+      .get(`/api/v1/parties/${invalidParty.id}`)
+      .end((request, response) => {
+        response.should.have.status(404);
+        response.body.statusMessage.should.equal('Party does not exist');
+        done();
+      });
+  });
+});
