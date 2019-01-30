@@ -7,5 +7,6 @@ const router = express.Router();
 router.post('/', PartyController.creatParty);
 router.get('/', PartyController.getParties);
 router.get('/:partyId', PartyController.getParty);
+router.patch('/:partyId/:partyName', PartyController.patchParty);
 
 export default router;

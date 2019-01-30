@@ -92,3 +92,25 @@ describe('/GET/:partyId party', () => {
       });
   });
 });
+
+describe('/PATCH a Party', () => {
+  const validParty = {
+    id: 1,
+    name: 'calix',
+  };
+  const editedvalidParty = {
+    id: validParty.id,
+    name: `${validParty.name}cgh`,
+  };
+
+  it('should be able to edit a parties name', (done) => {
+    chai.request(server)
+      .patch(`/api/v1/parties/${validParty.id}/${validParty.name}`)
+      .send(editedvalidParty)
+      .end((request, response) => {
+        response.should.have.status(200);
+        response.body.statusMessage.should.equal('Party updated successfully');
+        done();
+      });
+  });
+});
