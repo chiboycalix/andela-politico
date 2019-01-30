@@ -5,6 +5,6 @@ const router = express.Router();
 
 
 router.post('/', PartyController.creatParty);
-
+router.get('/', PartyController.getParties);
 
 export default router;

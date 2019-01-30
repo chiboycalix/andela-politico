@@ -48,3 +48,16 @@ describe('/POST Party Endpoint', () => {
       });
   });
 });
+
+
+describe('/GET parties', () => {
+  it('it should be able GET all parties', (done) => {
+    chai.request(server)
+      .get('/api/v1/parties')
+      .end((request, response) => {
+        response.should.have.status(200);
+        response.body.should.be.a('object');
+        done();
+      });
+  });
+});
