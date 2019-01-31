@@ -17,6 +17,17 @@ describe('/POST office', () => {
   const wrongDetails = {
     name: 'party name',
   };
+
+  it('should not post an Office with a missing field', (done) => {
+    chai.request(server)
+      .post('/api/v1/offices')
+      .send(wrongDetails)
+      .end((request, response) => {
+        response.body.statusMessage.should.equal('All fields are required');
+        response.should.have.status(400);
+        done();
+      });
+  });
   
   it('it should be able to POST a party with all fields being entered', (done) => {
     chai.request(server)
@@ -25,17 +36,6 @@ describe('/POST office', () => {
       .end((request, response) => {
         response.body.statusMessage.should.equal('Office created successfully');
         response.should.have.status(201);
-        done();
-      });
-  });
-  
-  it('should not post an Office with a missing field', (done) => {
-    chai.request(server)
-      .post('/api/v1/offices')
-      .send(wrongDetails)
-      .end((request, response) => {
-        response.body.statusMessage.should.equal('All fields are required');
-        response.should.have.status(400);
         done();
       });
   });
