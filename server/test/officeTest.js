@@ -42,3 +42,18 @@ describe('/POST office', () => {
       });
   });
 });
+
+
+describe('/GET offices', () => {
+  it('it should be able GET all offices', (done) => {
+    chai.request(server)
+      .get('/api/v1/offices')
+      .end((request, response) => {
+        response.should.have.status(200);
+        response.body.should.have.property('statusMessage');
+        response.body.statusMessage.should.equal('Success');
+        response.body.should.be.a('object');
+        done();
+      });
+  });
+});

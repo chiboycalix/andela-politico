@@ -15,6 +15,13 @@ class OfficeController {
     });
     return httpResponse(res, 201, 'Office created successfully', offices[offices.length - 1]);
   }
+
+  getOffices(req, res) {
+    if (offices.length === 0) {
+      return httpResponse(res, 404, 'No Office in your database');
+    }
+    return httpResponse(res, 200, 'Success', offices);
+  }
 }
 
 const officeController = new OfficeController();
