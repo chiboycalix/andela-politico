@@ -38,18 +38,19 @@ class PartyController {
 
   // Patch party Controller function
   patchParty(req, res) {
-    const { partyName } = req.params;
+    const { partyId } = req.params;
     const { name } = req.body;
     for (let i = 0; i < parties.length; i += 1) {
-      if (parties[i].name === partyName) {
+      if (parties[i].id === parseInt(partyId, 10)) {
         if (!name) {
           return httpResponse(res, 400, 'Name field is required');
         }
-        parties[i].name = name;
-        return httpResponse(res, 200, 'Party updated successfully', parties[i]);
       }
-      return httpResponse(res, 404, 'Party does not exist');
+      parties[i].name = name;
+      parties[i].id = partyId;
+      return httpResponse(res, 200, 'Party updated successfully', parties[i]);
     }
+    return httpResponse(res, 404, 'Party does not exist');
   }
 
   // Delete party Controller function
@@ -60,8 +61,8 @@ class PartyController {
         parties.splice(parties[i].id - 1, 1);
         return httpResponse(res, 200, 'party deleted');
       }
-      return httpResponse(res, 404, 'party does not exist');
     }
+    return httpResponse(res, 404, 'party does not exist');
   }
 }
 
