@@ -35,6 +35,22 @@ class PartyController {
     }
     return httpResponse(res, 404, 'Party does not exist');
   }
+
+  // Patch party Controller function
+  patchParty(req, res) {
+    const { partyName } = req.params;
+    const { name } = req.body;
+    for (let i = 0; i < parties.length; i += 1) {
+      if (parties[i].name === partyName) {
+        if (!name) {
+          return httpResponse(res, 400, 'Name field is required');
+        }
+        parties[i].name = name;
+        return httpResponse(res, 200, 'Party updated successfully', parties[i]);
+      }
+      return httpResponse(res, 404, 'Party does not exist');
+    }
+  }
 }
 
 
