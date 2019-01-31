@@ -22,6 +22,16 @@ class OfficeController {
     }
     return httpResponse(res, 200, 'Success', offices);
   }
+
+  getOffice(req, res) {
+    const { officeId } = req.params;
+    for (let i = 0; i < offices.length; i += 1) {
+      if (offices[i].id === parseInt(officeId, 10)) {
+        return httpResponse(res, 200, 'success', offices[i]);
+      }
+    }
+    return httpResponse(res, 404, 'Office does not exist');
+  }
 }
 
 const officeController = new OfficeController();

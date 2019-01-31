@@ -9,8 +9,10 @@
     "clean": "rm -rf dist",
     "build-dev": "npm run clean && mkdir dist && babel server -s -d dist && nodemon bin/dev",
     "build-prod": "npm run build-dev && nodemon bin/prod",
-    "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha test/*.js",
+    "cover": "istanbul cover _mocha",
+    "report": "nyc --reporter=html --reporter=text-lcov mocha --require babel-core/register ./server/test/ --exit | coveralls",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
     "istanbul": "^0.4.5",
+    "jscover": "^1.0.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.9"
   }

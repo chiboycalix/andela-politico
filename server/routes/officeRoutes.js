@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post('/', officeController.createOffice);
 router.get('/', officeController.getOffices);
+router.get('/:officeId', officeController.getOffice);
 
 
 
