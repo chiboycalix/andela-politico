@@ -51,6 +51,18 @@ class PartyController {
       return httpResponse(res, 404, 'Party does not exist');
     }
   }
+
+  // Delete party Controller function
+  deleteParty(req, res) {
+    const { partyId } = req.params;
+    for (let i = 0; i < parties.length; i += 1) {
+      if (parties[i].id === parseInt(partyId, 10)) {
+        parties.splice(parties[i].id - 1, 1);
+        return httpResponse(res, 200, 'party deleted');
+      }
+      return httpResponse(res, 404, 'party does not exist');
+    }
+  }
 }
 
 
