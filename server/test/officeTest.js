@@ -23,6 +23,7 @@ describe('/POST office', () => {
       .post('/api/v1/offices')
       .send(wrongDetails)
       .end((request, response) => {
+        response.body.should.have.property('statusMessage');
         response.body.statusMessage.should.equal('All fields are required');
         response.should.have.status(400);
         done();
@@ -59,6 +60,41 @@ describe('/GET offices', () => {
   });
 });
 
+describe('/GET/:officeId office', () => {
+  const validOffice = {
+    id: 1,
+    name: 'party name',
+    type: 'chi.jpg',
+  };
+  const invalidOffice = {
+    name: 'party name',
+    type: 'chi.jpg',
+  };
+  
+  it('it should be able GET a party', (done) => {
+    chai.request(server)
+      .get(`/api/v1/offices/${validOffice.id}`)
+      .end((request, response) => {
+        response.should.have.status(200);
+        response.body.should.be.a('Object');
+        response.body.should.have.property('statusMessage');
+        response.body.statusMessage.should.equal('success');
+        done();
+      });
+  });
+  
+  it('should only return a valid party', (done) => {
+    chai.request(server)
+      .get(`/api/v1/offices/${invalidOffice.id}`)
+      .end((request, response) => {
+        response.should.have.status(404);
+        response.body.should.have.property('statusMessage');
+        response.body.statusMessage.should.equal('Office does not exist');
+        done();
+      });
+  });
+});
+
 describe('/GET offices', () => {
   beforeEach((done) => {
     offices.splice(0, offices.length);
@@ -80,3 +116,4 @@ describe('/GET offices', () => {
       });
   });
 });
+
