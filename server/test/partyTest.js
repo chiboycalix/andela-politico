@@ -114,3 +114,19 @@ describe('/PATCH a Party', () => {
       });
   });
 });
+
+describe('/Delete party', () => {
+  const deleteParty = {
+    id: 1,
+    name: 'calix',
+  };
+  it('should delete a party', (done) => {
+    chai.request(server)
+      .delete(`/api/v1/parties/${deleteParty.id}`)
+      .end((request, response) => {
+        response.should.have.status(200);
+        response.body.statusMessage.should.equal('party deleted');
+        done();
+      });
+  });
+});
