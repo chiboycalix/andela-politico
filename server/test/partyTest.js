@@ -124,8 +124,8 @@ describe('/Delete party', () => {
     chai.request(server)
       .delete(`/api/v1/parties/${deleteParty.id}`)
       .end((request, response) => {
-        response.should.have.status(200);
-        response.body.statusMessage.should.equal('party deleted');
+        response.should.have.status(404);
+        response.body.statusMessage.should.equal('party does not exist');
         done();
       });
   });
