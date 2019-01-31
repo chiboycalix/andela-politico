@@ -36,6 +36,8 @@ describe('/POST office', () => {
       .end((request, response) => {
         response.body.statusMessage.should.equal('Office created successfully');
         response.should.have.status(201);
+        response.body.should.have.property('statusMessage');
+        response.body.should.be.a('object');
         done();
       });
   });

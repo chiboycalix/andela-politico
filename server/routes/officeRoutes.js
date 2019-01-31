@@ -1,10 +1,10 @@
 import express from 'express';
-import OfficeController from '../controllers/OfficeController';
+import officeController from '../controllers/OfficeController';
 
 
 const router = express.Router();
 
-router.post('/', OfficeController.createOffice);
+router.post('/', officeController.createOffice);
 
 
 
