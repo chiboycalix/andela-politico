@@ -9,10 +9,10 @@
     "clean": "rm -rf dist",
     "build": "babel server -s -d dist",
     "dev-start": "nodemon --exec babel-node ./server/app.js",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha test/*.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "cover": "istanbul cover _mocha",
     "report": "nyc --reporter=html --reporter=text-lcov mocha --require babel-core/register ./server/test/ --exit | coveralls",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"
   },
   "repository": {
     "type": "git",
