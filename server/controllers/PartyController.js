@@ -61,8 +61,8 @@ class PartyController {
         parties.splice(parties[i].id - 1, 1);
         return httpResponse(res, 200, 'party deleted');
       }
+      return httpResponse(res, 404, 'party does not exist');
     }
-    return httpResponse(res, 404, 'party does not exist');
   }
 }
 
