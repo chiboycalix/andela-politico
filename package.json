@@ -8,7 +8,7 @@
     "start": "npm run build && node ./dist/app.js",
     "clean": "rm -rf dist",
     "build": "babel server -s -d dist",
-    "dev-start":"nodemon --exec babel-node ./server/app.js",
+    "dev-start": "nodemon --exec babel-node ./server/app.js",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha test/*.js",
     "cover": "istanbul cover _mocha",
     "report": "nyc --reporter=html --reporter=text-lcov mocha --require babel-core/register ./server/test/ --exit | coveralls",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/chiboycalix/andela-politico#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.3.1",
     "babel-cli": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
