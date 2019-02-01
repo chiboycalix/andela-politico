@@ -1,0 +1,1 @@
+web: npm run clean && mkdir dist && babel server -s -d dist && nodemon bin/dev

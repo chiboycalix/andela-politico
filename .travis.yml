@@ -8,5 +8,5 @@ after_success:
   - npm run coveralls
   - npm run coverage
   - npm run report
-script
+script:
   - npm test
