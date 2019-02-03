@@ -54,4 +54,29 @@ export default class UserController {
       });
     });
   }
+
+  
+  loginUser(request, response) {
+    const { email, password } = request.body;
+    const query = {
+      text: 'select id, email, password, firstName, lastName from users where email = $1 LIMIT 1',
+      values: [email],
+    };
+    Pool.query(query, (error, result) => {
+      if (error) {
+        return httpResponse(response, 400, 'Bad Request: fill in all required fields and try later', error.message);
+      }
+      const user = result.rows[0];
+      if (!result.rows.length) {
+        return httpResponse(response, 401, 'Invalid Email or Password');
+      }
+      const check = bcrypt.compareSync(password, user.password);
+      if (check) {
+        const token = auth.authenticate(user);
+        delete user.password;
+        return httpResponse(response, 200, 'login sucessful', { user, token });
+      }
+      return httpResponse(response, 401, 'Invalid Email or Password');
+    });
+  }
 }

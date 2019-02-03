@@ -58,4 +58,40 @@ const signupValidation = (request, response, next) => {
   next();
 };
 
-export default signupValidation;
+const loginValidation = (request, response, next) => {
+  let pass = true;
+  const errors = {};
+  const emailFormat = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  if (request.body.email) {
+    request.body.email = request.body.email.trim();
+  }
+
+  const values = request.body;
+  const required = ['email', 'password'];
+
+  for (let i = 0; i < required.length; i += 1) {
+    if (!values[required[i]]) {
+      pass = false;
+      errors[required[i]] = `${required[i]} is required`;
+    }
+  }
+
+  if (values.email && !emailFormat.test(String(values.email).toLowerCase())) {
+    pass = false;
+    errors.email = 'email not valid';
+  }
+  if (values.password && !values.password.replace(/\s/g, '').length) {
+    pass = false;
+    errors.password = 'password is required';
+  }
+
+  if (pass === false) {
+    return httpResponse(response, 400, 'error logging up', errors);
+  } 
+  request.body.email = request.body.email.toString().trim(); 
+  request.body.password = request.body.password.toString().trim(); 
+  next();
+};
+
+export default { signupValidation, loginValidation };
