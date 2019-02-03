@@ -7,8 +7,9 @@
     "test": "mocha --compilers js:babel-core/register server/test/**/*.js --exit",
     "start": "npm run build && node ./dist/app.js",
     "clean": "rm -rf dist",
-    "build": "babel server -s -d dist",
-    "dev-start": "nodemon --exec babel-node ./server/app.js",
+    "build": "cross-env NODE_ENV=development babel server -s -d dist",
+    "dev-start": "npm run migrate && cross-env NODE_ENV=development nodemon --exec babel-node ./server/app.js",
+    "migrate": "babel-node ./server/db/migrations/tables.js --exec",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "cover": "istanbul cover _mocha",
     "report": "nyc --reporter=html --reporter=text-lcov mocha --require babel-core/register ./server/test/ --exit | coveralls",
@@ -26,10 +27,12 @@
   "homepage": "https://github.com/chiboycalix/andela-politico#readme",
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "pg": "^7.8.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
@@ -38,6 +41,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
