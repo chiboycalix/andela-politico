@@ -1,14 +1,18 @@
-import { Client } from 'pg';
+import { Pool } from 'pg';
 import dotenv from 'dotenv';
 import connectionString from './db_config';
 
 dotenv.config();
 
-export default (() => {
-  const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV;
+let connection;
 
-  if (env === 'development') {
-    return new Client(connectionString.development);
-  }
-  return new Client(connectionString.production);
-})();
+if (env === 'development') {
+  connection = connectionString.development;
+} else {
+  connection = connectionString.production;
+}
+
+const pool = new Pool(connection);
+
+export default pool;

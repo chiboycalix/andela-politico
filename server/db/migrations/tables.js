@@ -6,7 +6,7 @@ const usersColumn = {
   lastName: 'VARCHAR',
   otherName: 'VARCHAR',
   email: 'VARCHAR',
-  phoneNumber: 'INTEGER',
+  phoneNumber: 'VARCHAR',
   passportUrl: 'TEXT',
   password: 'VARCHAR',
   isAdmin: 'BOOLEAN DEFAULT false',
@@ -46,9 +46,11 @@ const voteColumn = {
   updatedAt: 'date NOT NULL DEFAULT CURRENT_DATE',
 };
 
+
 query(db, 'users', usersColumn, () => {
   query(db, 'parties', partyColumn);
   query(db, 'offices', officeColumn);
   query(db, 'candidate', candidateColumn);
   query(db, 'vote', voteColumn);
+  db.end();
 });
