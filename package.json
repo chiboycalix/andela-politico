@@ -9,7 +9,8 @@
     "clean": "rm -rf dist",
     "build": "cross-env NODE_ENV=development babel server -s -d dist",
     "dev-start": "npm run migrate && cross-env NODE_ENV=development nodemon --exec babel-node ./server/app.js",
-    "migrate": "babel-node ./server/db/migrations/tables.js --exec",
+    "migrate": "cross-env NODE_ENV=development babel-node ./server/db/migrations/tables.js --exec",
+    "droptable": "cross-env NODE_ENV=development babel-node ./server/db/migrations/dropTable.js --exec",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "cover": "istanbul cover _mocha",
     "report": "nyc --reporter=html --reporter=text-lcov mocha --require babel-core/register ./server/test/ --exit | coveralls",
@@ -18,7 +19,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chiboycalix/andela-politico.git"
-  }, 
+  },
   "author": "Igwe Abraham Chinonso",
   "license": "ISC",
   "bugs": {
@@ -29,10 +30,12 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "pg": "^7.8.0"
+    "jsonwebtoken": "^8.4.0",
+    "pg": "^7.4.3"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
