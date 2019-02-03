@@ -1,13 +1,13 @@
-import express from 'express';
-import officeController from '../controllers/OfficeController';
+// import express from 'express';
+// import officeController from '../controllers/old/OfficeController';
 
 
-const router = express.Router();
+// const router = express.Router();
 
-router.post('/', officeController.createOffice);
-router.get('/', officeController.getOffices);
-router.get('/:officeId', officeController.getOffice);
+// router.post('/', officeController.createOffice);
+// router.get('/', officeController.getOffices);
+// router.get('/:officeId', officeController.getOffice);
 
 
 
-export default router;
+// export default router;

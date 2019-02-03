@@ -3,3 +3,4 @@
 .coveralls.yml
 /dist
 /.nyc_output
+.env
