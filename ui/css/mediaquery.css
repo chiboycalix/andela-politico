@@ -130,12 +130,18 @@
         padding: .1rem 1.0rem;
         width: 18rem;
         font-size: 70%;
+        z-index: 999;
+    }
+    .modal{
+        z-index: 999;
     }
 
 /*media queries for navigation element*/
     .logo{
-        width: 100px;
+        width: 80px;
         margin-left: 20px;
+        margin-top: 0;
+        z-index: 9999;
     }
     nav{
        height: 100%;
@@ -143,7 +149,7 @@
     .menu-icon{
         float: right;
         position: relative;
-        top: -100px;
+        top: 20px;
         cursor: pointer;
     }
     div.ic {
@@ -152,6 +158,16 @@
         background-color: #fff;
         margin: 6px 10px;
       }
+      nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 70px;
+        background-color: #12ef6e;
+        margin: 0 auto;
+        width: 100vw;
+        z-index: 999;
+    }
     .main-nav{
         float: left;
         overflow: hidden;
@@ -165,7 +181,7 @@
     .main-nav.open{
         height: 80vh;
         width: 100vw;
-        margin-top: -4.2%;
+        margin-top: 20%;
         background-color: #404040;
         margin-left: -5%;
         display: inline-block;
@@ -242,6 +258,15 @@
     }
 
     /* Media queries for profile page*/
+    .profile-wrapper{
+        margin-top: -100px;
+    }
+    .logo-profile{
+        width: 80px;
+        margin-left: 20px;
+        margin-top: -40px;
+        z-index: 9999;
+    }
     .header-grid .photo{
         width: 70px;
         height: 70px;

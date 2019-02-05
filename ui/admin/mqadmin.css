@@ -130,16 +130,25 @@
 }
 @media only screen and (max-width: 490px){
     .logo{
-        width: 100px;
+        width: 80px;
         margin-left: 20px;
+        margin-top: 0;
+        z-index: 9999;
     }
     nav{
-       height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 70px;
+        background-color: #12ef6e;
+        margin: 0 auto;
+        width: 100vw;
+        z-index: 999;
     }
     .menu-icon{
         float: right;
         position: relative;
-        top: -100px;
+        top: 15px;
         cursor: pointer;
     }
     div.ic {
@@ -161,7 +170,7 @@
     .main-nav.open{
         height: 76vh;
         width: 100vw;
-        margin-top: -5.5%;
+        margin-top: 10%;
         background-color: #404040;
         margin-left: 28%;
     }
@@ -231,26 +240,28 @@
         margin-left: -20px;
     }
     
-    /* .create-party form{
+    .create-party form{
         margin-left: -10px;
-    }  */
-
-    
-   
+    } 
+ 
      .profile-wrapper{
         font-size: 70%;
+        margin-top: -50px;
+        margin-left: -5px;
      }
      .create-party form{
         transform: translateX(10%);
      }
-     
+     .create-party label{
+         margin-left: 30px;
+     }
      .create-party input[type=text],
      .create-party input[type=file]{
-         margin: 10px;
+         margin-left: 0;
          padding: 5px;
      }
      .create-party input[type=file]{
-         transform: translateX(30%)
+         transform: translateX(35%)
      }
      .create-party input[type=submit]{
          font-size: 90%;

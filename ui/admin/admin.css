@@ -110,26 +110,35 @@ label{
 /*        HEADER             */
 /*--------------------------*/
 header{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/bg2.jpg');
+    /* background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/bg2.jpg'); */
     background-size: cover;
     background-position: center;
     height: 22vh;
-    
 }
 
 .logo{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     border: 3px solid #12ef6e;
     float: left;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 0 40px;
+    position: fixed;
+    z-index: 999;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    background-color: #12ef6e;
+    margin: 0 auto;
+    width: 100vw;
 }
 .main-nav{
     float: right;
     list-style: none;
-    margin-top: 55px;
+    margin-top: 0;
 }
 .main-nav li {
     display: inline-block;

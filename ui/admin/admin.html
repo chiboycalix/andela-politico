@@ -20,20 +20,20 @@
                     <div class="ic"></div>
                 </a>
                 <ul class="main-nav">
-                    <li><a href="home.html">home</a></li>
-                    <li><a href="profile.html">admin area</a></li>
+                    <li><a href="#party">create party</a></li>
+                    <li><a href="#office">create office</a></li>
                     <li><a href="index.html">logout</a></li>
                 </ul>
             </div>
         </nav>
-        <div class="politico-text-box"></div>
+        <div class="politico-text-box" id="party"></div>
     </header>
 
     
-    <section>
+    <section >
         <div class="row">
             <div class="profile-wrapper">
-                <div class="row">
+                <div class="row" >
                     <div>
                         <h2 class="create-party-text">create party</h2>
                     </div>
@@ -58,6 +58,7 @@
                     </div>
                 </div>
                 <div class="line"></div>
+                
                 <!-- My Parties section -->
                 <div class="row parties">
                     <h2 class="my-parties">list of parties</h2>
@@ -100,7 +101,7 @@
                                     <a href="#" class="delete">Delete</a>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td>president</td>
                                 <td>Buhari</td>
                                 <td>PDP</td>
@@ -118,7 +119,7 @@
                                     <a href="#" class="delete">Delete</a>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr id="office">
                                 <td>president</td>
                                 <td>Buhari</td>
                                 <td>PDP</td>
@@ -151,10 +152,10 @@
             </div>
             <div class="line"></div>
             <div class="row office">
-                <div>
-                    <h2 class="create-office-text">create office</h2>
+                <div >
+                    <h2 class="create-office-text" >create office</h2>
                 </div>
-                <div class="create-office">
+                <div class="create-office" >
                     <form action="#">
                         <div class="office-group">
                             <label for="">Office Name</label>

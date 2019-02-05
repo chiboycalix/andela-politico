@@ -159,7 +159,7 @@ header{
     background-size: cover;
     background-position: center;
     height: 100vh;
-    
+    background-color: #f4f4f4;
 }
 .politico-text-box{
     position: absolute;
@@ -170,17 +170,28 @@ header{
     transform: translate(-50%, -50%);
 }
 .logo{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     border: 3px solid #12ef6e;
     float: left;
-    margin: 20px 40px;
+    margin: 0 40px;
+    position: fixed;
+    z-index: 999;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    background-color: #12ef6e;
+    margin: 0 auto;
+    width: 100vw;
 }
 .main-nav{
     float: right;
     list-style: none;
-    margin-top: 55px;
+    margin-top: 20px;
 }
 .main-nav li {
     display: inline-block;
@@ -409,6 +420,9 @@ table td.winner{
 .parties-grid img{
     width: 100%;
     height: 100%;
+}
+.political-party{
+    z-index: -999;
 }
 
 /*---------------------------*/
