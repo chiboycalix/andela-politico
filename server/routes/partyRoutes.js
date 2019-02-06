@@ -1,13 +1,12 @@
-// import express from 'express';
-// import PartyController from '../controllers/PartyController';
+import express from 'express';
+import PartyController from '../controllers/PartyController';
 
-// const router = express.Router();
+const router = express.Router();
 
+router.post('/', new PartyController().createParty);
+router.get('/', new PartyController().getParties);
+router.get('/:partyId', new PartyController().getParty);
+router.patch('/:partyId/:partyName', new PartyController().patchParty);
+router.delete('/:partyId', new PartyController().deleteParty);
 
-// router.post('/', PartyController.creatParty);
-// router.get('/', PartyController.getParties);
-// router.get('/:partyId', PartyController.getParty);
-// router.patch('/:partyId/:partyName', PartyController.patchParty);
-// router.delete('/:partyId', PartyController.deleteParty);
-
-// export default router;
+export default router;
