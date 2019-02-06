@@ -46,7 +46,7 @@ export default class PartyController {
         if (error) {
           return httpResponse(response, 500, 'internal serverrr error', error.message);
         }
-        if (result.rows.id !== parseInt(partyId, 10)) {
+        if (result.rows[0].id !== parseInt(partyId, 10)) {
           return httpResponse(response, 404, 'party does not exist');
         }
         return httpResponse(response, 200, 'success', result.rows[0]);
