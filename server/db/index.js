@@ -9,12 +9,10 @@ let connection;
 
 if (env === 'development') {
   connection = connectionString.development;
-} else if (env === 'test') {
-  connection = connectionString.test;
 } else {
   connection = connectionString.production;
 }
-
+ 
 const pool = new Pool(connection);
 
 export default pool;

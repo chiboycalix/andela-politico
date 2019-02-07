@@ -56,15 +56,12 @@ export default class PartyController {
 
   getParties(request, response) {
     const query = 'SELECT * FROM parties';
-    Pool.connect((error, client) => {
-      if (error) return httpResponse(response, 500, 'internal server error');
 
-      client.query(query, (error, result) => {
-        if (error) {
-          return httpResponse(response, 500, 'internal server error');
-        }
-        return httpResponse(response, 200, 'success', result.rows);
-      });
+    Pool.query(query, (error, result) => {
+      if (error) {
+        return httpResponse(response, 500, 'internal server error', error.message);
+      }
+      return httpResponse(response, 200, 'success', result.rows);
     });
   }
 
