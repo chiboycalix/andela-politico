@@ -18,39 +18,36 @@ export default class UserController {
     } = request.body;
 
     const check = `SELECT * FROM users WHERE email = '${email}' LIMIT 1`;
-    Pool.connect((error, client) => {
-      if (error) return httpResponse(response, 500, 'internal server error', error.message);
-      client.query(check, (error, result) => {
-        if (error) {
-          return httpResponse(response, 500, 'internal server error', error);
-        }
-        if (result.rows.length > 0) {
-          return httpResponse(response, 409, 'email already exists');
-        }
+    Pool.query(check, (error, result) => {
+      if (error) {
+        return httpResponse(response, 500, 'internal server error', error);
+      }
+      if (result.rows.length > 0) {
+        return httpResponse(response, 409, 'email already exists');
+      }
 
-        const hashedPassword = bcrypt.hashSync(password, 10);
-        const query = {
-          text: `INSERT INTO users (email, password, firstName,
+      const hashedPassword = bcrypt.hashSync(password, 10);
+      const query = {
+        text: `INSERT INTO users (email, password, firstName,
            lastName, otherName, passportUrl, phoneNumber) 
            VALUES ($1, $2, $3, $4, $5, $6, $7) returning id, firstName, lastName, email`,
-          values: [
-            email,
-            hashedPassword,
-            firstName,
-            lastName,
-            otherName,
-            passportUrl,
-            phoneNumber,
-          ],
-        };
+        values: [
+          email,
+          hashedPassword,
+          firstName,
+          lastName,
+          otherName,
+          passportUrl,
+          phoneNumber,
+        ],
+      };
 
-        Pool.query(query, (error, result) => {
-          if (error) return httpResponse(response, 500, 'internal server error');
-          const user = result.rows[0];
-          const token = auth.authenticate(user);
-          response.setHeader('x-access-token', token);
-          return httpResponse(response, 201, 'user created successfully', { user, token });
-        });
+      Pool.query(query, (error, result) => {
+        if (error) return httpResponse(response, 500, 'internal server error');
+        const user = result.rows[0];
+        const token = auth.authenticate(user);
+        response.setHeader('x-access-token', token);
+        return httpResponse(response, 201, 'user created successfully', { user, token });
       });
     });
   }
