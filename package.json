@@ -4,7 +4,7 @@
   "description": "A system that lets user login and vote, view election results and registers as political candidates",
   "main": "app",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register server/test/**/*.js --exit",
+    "test": "cross-env NODE_ENV=test && mocha --compilers js:babel-core/register server/test/**/*.js --exit",
     "start": "npm run build && node ./dist/app.js",
     "clean": "rm -rf dist",
     "build": "cross-env NODE_ENV=development babel server -s -d dist",
