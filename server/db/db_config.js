@@ -14,7 +14,7 @@ connectionString.development = {
 
 
 connectionString.production = {
-  db_url: '',
+  database: process.env.DATABASE_URL,
 };
 
 export default connectionString;
