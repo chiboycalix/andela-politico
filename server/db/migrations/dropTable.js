@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import db from '../index';
 
-const tableNames = ['users', 'parties', 'offices', 'candidate', 'vote'];
+const tableNames = ['users', 'parties', 'offices', 'interest', 'vote'];
 
 
 db.connect((error, client) => {

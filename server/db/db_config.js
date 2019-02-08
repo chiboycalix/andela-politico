@@ -12,8 +12,13 @@ connectionString.development = {
   port: process.env.DB_PORT,
 };
 
+
 connectionString.production = {
-  db_url: '',
+  user: process.env.USER,
+  host: process.env.HOST,
+  database: process.env.DATABASE,
+  password: process.env.PASSWORD,
+  port: process.env.DB_PORT,
 };
 
 export default connectionString;

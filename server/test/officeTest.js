@@ -1,15 +1,22 @@
-// import chai from 'chai';
-// import chaiHttp from 'chai-http';
+import chai from 'chai';
+import chaiHttp from 'chai-http';
 
-// import server from '../app';
-// import offices from '../db/officeDB';
+import server from '../app';
 
-// // eslint-disable-next-line no-unused-vars
-// const should = chai.should();
 
-// chai.use(chaiHttp);
+// eslint-disable-next-line no-unused-vars
+const should = chai.should();
 
-// describe('/POST office', () => {
+chai.use(chaiHttp);
+
+// describe('offices', () => {
+//   beforeEach((done) => { //Before each test we empty the database
+//       Book.remove({}, (err) => { 
+//          done();           
+//       });        
+//   });
+
+// describe('/GET office', () => {
 //   const correctDetails = {
 //     type: 'logo.jpg',
 //     name: 'office name',
@@ -18,9 +25,9 @@
 //     name: 'party name',
 //   };
 
-//   it('should not post an Office with a missing field', (done) => {
+//   it('should not get all offices', (done) => {
 //     chai.request(server)
-//       .post('/api/v1/offices')
+//       .('/api/v1/offices')
 //       .send(wrongDetails)
 //       .end((request, response) => {
 //         response.body.should.have.property('statusMessage');
@@ -46,19 +53,16 @@
 
 
 
-// describe('/GET offices', () => {
-//   it('it should be able GET all offices', (done) => {
-//     chai.request(server)
-//       .get('/api/v1/offices')
-//       .end((request, response) => {
-//         response.should.have.status(200);
-//         response.body.should.have.property('statusMessage');
-//         response.body.statusMessage.should.equal('Success');
-//         response.body.should.be.a('object');
-//         done();
-//       });
-//   });
-// });
+describe('/GET offices', () => {
+  it('it should be able GET all offices', (done) => {
+    chai.request(server)
+      .get('/api/v1/offices')
+      .end((request, response) => {
+        response.should.have.status(200);
+        done();
+      });
+  });
+});
 
 // describe('/GET/:officeId office', () => {
 //   const validOffice = {
