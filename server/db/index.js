@@ -9,8 +9,10 @@ let connection;
 
 if (env === 'development') {
   connection = connectionString.development;
-} else {
+  console.log(connection)
+} else if (env === 'production') {
   connection = connectionString.production;
+  console.log(connection);
 }
  
 const pool = new Pool(connection);

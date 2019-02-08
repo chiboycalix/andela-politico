@@ -38,7 +38,6 @@ export default class PartyController {
   getParty(request, response) {
     const { partyId } = request.params;
     const check = `SELECT * FROM parties WHERE id = '${partyId}'`;
-    console.log(check);
     Pool.connect((error, client) => {
       if (error) return httpResponse(response, 500, 'internal server error');
       client.query(check, (error, result) => {
@@ -46,7 +45,6 @@ export default class PartyController {
           return httpResponse(response, 500, 'internal serverrr error', error.message);
         }
         if (!result.rows.length) {
-          console.log(result);
           return httpResponse(response, 404, 'party does not exist');
         }
         return httpResponse(response, 200, 'success', result.rows[0]);
@@ -68,12 +66,10 @@ export default class PartyController {
   patchParty(request, response) {
     const { partyId } = request.params;
     const { name } = request.body;
-    console.log(name);
     const query = {
       text: 'UPDATE parties set name = $1 WHERE id = $2 returning name',
       values: [name, parseInt(partyId, 10)],
     };
-    console.log(query.text);
     Pool.connect((error, client) => {
       if (error) return httpResponse(response, 500, 'internal server error');
       client.query(query, (error, result) => {
