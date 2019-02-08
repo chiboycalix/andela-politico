@@ -49,9 +49,22 @@ const voteColumn = {
 
 
 query(db, 'users', usersColumn, () => {
-  query(db, 'parties', partyColumn);
-  query(db, 'offices', officeColumn);
-  query(db, 'interest', interestColumn);
-  query(db, 'vote', voteColumn);
-  db.end();
+  console.log('user database created');
+  query(db, 'parties', partyColumn, () => {
+    console.log('parties database created');
+    query(db, 'offices', officeColumn, () => {
+      console.log('offices database created');
+      query(db, 'interest', interestColumn, () => {
+        console.log('interest database created');
+        query(db, 'vote', voteColumn, () => {
+          console.log('vote database created');
+          // process.exit(-1);
+        });
+      });
+    });
+  });
 });
+
+
+
+
