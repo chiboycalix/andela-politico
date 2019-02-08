@@ -14,27 +14,27 @@
 //   });
 // });
 
-// describe('/POST Party Endpoint', () => {
-//   const correctDetails = {
-//     name: 'party name',
-//     logoUrl: 'logo.jpg',
-//   };
-//   const wrongDetails = {
-//     name: correctDetails.name,
-//   };
+describe('/POST Party Endpoint', () => {
+  const correctDetails = {
+    name: 'party name',
+    logoUrl: 'logo.jpg',
+  };
+  const wrongDetails = {
+    name: correctDetails.name,
+  };
 
-//   it('should be able to CREATE/POST a party with all required fields', (done) => {
-//     chai.request(server)
-//       .post('/api/v1/parties')
-//       .send(correctDetails)
-//       .end((request, response) => {
-//         response.body.should.have.property('statusMessage');
-//         response.body.statusMessage.should.equal('Party created successfully');
-//         response.statusCode.should.equal(201);
-//         response.body.should.be.a('object');
-//         done();
-//       });
-//   });
+  it('should be able to CREATE/POST a party with all required fields', (done) => {
+    chai.request(server)
+      .post('/api/v1/parties')
+      .send(correctDetails)
+      .end((request, response) => {
+        response.body.should.have.property('statusMessage');
+        response.body.statusMessage.should.equal('Party created successfully');
+        response.statusCode.should.equal(201);
+        response.body.should.be.a('object');
+        done();
+      });
+  });
 
 //   it('should fail if the fields are not completely entered', (done) => {
 //     chai.request(server)
@@ -51,17 +51,17 @@
 // });
 
 
-// describe('/GET parties', () => {
-//   it('it should be able GET all parties', (done) => {
-//     chai.request(server)
-//       .get('/api/v1/parties')
-//       .end((request, response) => {
-//         response.should.have.status(200);
-//         response.body.should.be.a('object');
-//         done();
-//       });
-//   });
-// });
+describe('/GET parties', () => {
+  it('it should be able GET all parties', (done) => {
+    chai.request(server)
+      .get('/api/v1/parties')
+      .end((request, response) => {
+        response.should.have.status(200);
+        response.body.should.be.a('object');
+        done();
+      });
+  });
+});
 
 // describe('/GET/:partyId party', () => {
 //   const validParty = {

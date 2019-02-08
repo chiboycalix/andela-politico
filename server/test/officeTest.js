@@ -56,9 +56,9 @@ chai.use(chaiHttp);
 describe('/GET offices', () => {
   it('it should be able GET all offices', (done) => {
     chai.request(server)
-      .get('/api/v1/offices')
+      .get('/api/v1/parties')
       .end((request, response) => {
-        response.should.have.status(200);
+        response.status.(200);
         done();
       });
   });
